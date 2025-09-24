@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    width: 80%;
+    max-width: 900px;
+    margin: auto;
+}
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "a a a"
+        "b c c"
+        "d d d"
+    ;
+}
+header{
+    background-color: yellow;
+    grid-area: a;
+}
+nav{
+    background-color: blueviolet;
+    grid-area: b;
+}
+article{
+    background-color: aqua;
+    grid-area: c;
+}
+footer{
+    background-color: greenyellow;
+    grid-area: d;
+}
+
+/* grides oldalalakítás lépései:
+1. meghatározzuk a szülöelemet ( main - display:grid )
+2. elnevezük a gyerekeket grid-area:nev header nav article footer
+3. a szülöelemeket létrehozzunk a rácszerkezetet grid-template-columns: 1fr 1fr 1fr;
+4. elhelyezük a rácson a gyerekeket grid-template-areas
+ */
+
+/* alt shift a */
+/* menü formázása */
+nav li{
+    list-style-type: none;
+    background-color: azure;
+    padding: 5px;
+    margin:5px 0px;
+}
+nav a{
+    text-decoration: none;
+}
+nav ul{
+    padding-left: 0px;
+}
+nav li:hover{
+    background-color: chartreuse;
+}
+nav li:hover a{
+    color: red;
+}
+@media screen and (max-width:600px){
+    body{
+        width: 100%;
+    }
+    main{
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "a"
+            "b"
+            "c"
+            "d"
+        ;
+    }
+    nav ul{
+        display: grid;
+        grid-template-columns: 100px 100px;
+    }
+    nav li{
+        margin: 5px;
+    }
+}
