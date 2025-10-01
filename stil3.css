@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+main{
+    display: grid;
+    grid-template-areas: 
+        "h h h"
+        "n n n"
+        "a a e"
+        "s s e"
+        "f f f"
+    ;
+    grid-template-rows: 100px 50px 1fr 1fr 100px;
+    height: 100vh;
+    gap: 10px;
+    margin: 0 10px 0 10px ;
+}
+article{
+    grid-area: a;
+    border: solid 3px black;
+    align-content: center;
+    text-align: center;
+    background-color: aqua;
+}
+aside{
+    grid-area: e;
+    border: solid 3px black;
+    min-width: 150px;
+    text-align: center;
+    background-color: blueviolet;
+    align-content: center;
+}
+section{
+    grid-area: s;
+    border: solid 3px black;
+    text-align: center;
+    align-content: center;
+    background-color: darkgrey;
+}
+footer{
+    grid-area: f;
+    border: solid 3px black;
+    text-align: center;
+    align-content: center;
+    background-color: darkgrey;
+}
+header{
+    grid-area: h;
+    border: solid 3px black;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    background-color: red;
+}
+nav{
+    grid: n;
+    border: solid 3px black;
+    text-align: center;
+    align-content: center;
+    background-color: darkgrey;
+}
+@media screen and (max-width:600px){
+    main{
+        grid-template-areas: 
+        "h"
+        "n"
+        "a"
+        "s"
+        "e"
+        "f"
+    ;
+    grid-template-rows: 100px 50px 1fr 1fr 50px 50px;
+    }
+}
